@@ -14,12 +14,30 @@ BOT_NAME = 'tutorial'
 SPIDER_MODULES = ['tutorial.spiders']
 NEWSPIDER_MODULE = 'tutorial.spiders'
 FEED_EXPORT_ENCODING = 'utf-8'
-
+#ITEM_PIPELINES = {'scrapy.pipelines.files.FilesPipeline': 1}
+#FILES_STORE = 'home/VanAnh/python/Scrapy/CrawlNhacCuaTui/CrawlNhacCuaTui/tutorial/MP3'
+#FILES_EXPIRES = 120
+MEDIA_ALLOW_REDIRECTS = True
+#image, mp3
+#FILES_URLS_FIELD = 'field_name_for_your_files_urls'
+#FILES_RESULT_FIELD = 'field_name_for_your_processed_files'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
+#mongo pineline
+
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "NhacCuaTui"
+MONGODB_COLLECTION = "song"
+
+ITEM_PIPELINES = {
+	'tutorial.pipelines.MongoPipeline' : 300
+}
+
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -88,3 +106,5 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+##pineline mongo

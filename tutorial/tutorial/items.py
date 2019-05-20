@@ -7,8 +7,15 @@
 
 import scrapy
 
-
-class TutorialItem(scrapy.Item):
+class SongItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    singers = scrapy.Field()
+    lyric = scrapy.Field()
+    #link = scrapy.Field()
+    '''
+    title = scrapy.Field()
+  	singers = scrapy.Field()
+  	lyric = scrapy.Field()
+	'''
